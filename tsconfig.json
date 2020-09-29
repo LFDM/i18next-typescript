@@ -7,9 +7,7 @@
     "sourceMap": true,
     "strict": true,
     "target": "es2015",
-    "resolveJsonModule": true,
-    "jsx": "react",
-    "incremental": true
+    "resolveJsonModule": true
   },
   "compileOnSave": true,
   "include": ["src"]
