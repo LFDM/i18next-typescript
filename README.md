@@ -41,6 +41,19 @@ Options:
 -h, --help display help for command
 ```
 
+While all options can be provided through the command line, it's recommended to use a configuration file like the one below in your root folder:
+
+```json
+{
+  "inFolder": "public/locales/en",
+  "outFile": "app/src/i18next.keys.ts",
+  "defaultNs": "translation",
+  "indent": 2,
+  "typeName": "TranslationKeys",
+  "quoteChar": "'"
+}
+```
+
 ### Run an example
 
 - Check out this repository
