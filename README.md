@@ -49,10 +49,19 @@ While all options can be provided through the command line, it's recommended to 
 {
   "inFolder": "public/locales/en",
   "outFile": "app/src/i18next.keys.ts",
-  "defaultNs": "translation", // optional
-  "indent": 2, // optional
-  "typeName": "TranslationKeys", // optional
-  "quoteChar": "'" // optional
+  "defaultNs": "translation",
+  "indent": 2,
+  "typeName": "TranslationKeys",
+  "quoteChar": "'"
+}
+```
+
+Only `inFolder` and `outFile` are required. Minimal configuration:
+
+```
+{
+  "inFolder": "public/locales/en",
+  "outFile": "app/src/i18next.keys.ts",
 }
 ```
 
