@@ -56,22 +56,20 @@ While all options can be provided through the command line, it's recommended to 
 
 To leverage the auto-generated types, override and re-export the `TFunction` and/or `WithT`.
 
-```
+```typescript
 // e.g. /app/src/i18next-overrides.ts
 
-import { TypedTFunction } from 'i18next-typescript';
-import { TranslationKeys } from './i18next.keys.ts';
+import { TypedTFunction } from "i18next-typescript";
+import { TranslationKeys } from "./i18next.keys.ts";
 
 export type TFunction = TypedTFunction<TranslationKeys>;
 
-
 // e.g. /app/src/index.ts
 
-import { TFunction } from './i18next-overrides.ts';
+import { TFunction } from "./i18next-overrides.ts";
 
 // calling 't' will now autocomplete and complain if you use a key which doesn't exist
-const greeting = (t: TFunction) => t('common:greeting.evening');
-
+const greeting = (t: TFunction) => t("common:greeting.evening");
 ```
 
 ### Run an example
