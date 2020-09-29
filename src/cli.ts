@@ -58,7 +58,6 @@ withOptions(
     .description("Generate type definitions for all your translation keys.")
 ).action(async (c) => {
   const options = await parseOptions(c.opts());
-  console.log(options);
   await generate(options);
 });
 
