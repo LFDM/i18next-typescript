@@ -70,6 +70,7 @@ const parseOptions = async (opts: any): Promise<Options> => {
 withOptions(commander.command("generate").alias("g")).action(async (c) => {
   const options = await parseOptions(c.opts());
   await generate(options);
+  process.exit(0);
 });
 
 withOptions(commander.command("watch").alias("w")).action(async (c) => {
