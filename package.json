@@ -18,7 +18,8 @@
   "dependencies": {},
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node src/cli.ts"
+    "dev": "ts-node src/cli.ts",
+    "prepack": "yarn build"
   },
   "bin": {
     "i18next-typescript": "lib/cli.js"
