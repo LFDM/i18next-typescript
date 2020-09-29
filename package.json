@@ -16,6 +16,7 @@
   },
   "dependencies": {},
   "scripts": {
+    "build": "tsc",
     "dev": "ts-node src/cli.ts"
   }
 }
