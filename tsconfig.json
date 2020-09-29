@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
+    "outDir": "lib",
     "module": "commonjs",
     "noImplicitReturns": true,
     "noUnusedLocals": true,
-    "outDir": "lib",
     "sourceMap": true,
     "strict": true,
     "target": "es2015",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "types": ["node"]
   },
-  "compileOnSave": true,
   "include": ["src"]
 }
