@@ -1,6 +1,6 @@
 import * as commander from "commander";
 import * as path from "path";
-import { generate } from "./generate";
+import { generate, Options } from "./generate";
 import { watch } from "./watch";
 
 const ROOT = path.join(__dirname, "..", "..", "..", "..");
@@ -46,7 +46,21 @@ const withOptions = (command: commander.Command) => {
     );
 };
 
-withOptions(commander.command("generate").alias("g"));
-withOptions(commander.command("watch").alias("w"));
+const parseOptions = (opts: any): Options => {
+  return {
+    inFolder: "",
+    outFile: "",
+  };
+};
+
+withOptions(commander.command("generate").alias("g")).action(async (c) => {
+  const options = parseOptions(c.opts());
+  await generate(options);
+});
+
+withOptions(commander.command("watch").alias("w")).action((c) => {
+  const options = parseOptions(c.opts());
+  watch({ inFolder: options.inFolder }, () => generate(options));
+});
 
 commander.parse(process.argv);
