@@ -42,7 +42,7 @@ const keysToTs = ({
   ].join("\n");
 };
 
-type Options = {
+export type Options = {
   inFolder: string;
   outFile: string;
   defaultNs?: string;
