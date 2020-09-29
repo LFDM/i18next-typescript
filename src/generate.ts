@@ -52,7 +52,7 @@ export const generate = async ({
   outFile,
   defaultNs = "translation",
   indent = 2,
-  typeName = "TranslationKey",
+  typeName = "TranslationKeys",
   quoteChar = `'`,
 }: Options) => {
   const files = await readdir(inFolder);
