@@ -4,5 +4,5 @@
   "defaultNs": "translation",
   "indent": 2,
   "typeName": "TranslationKeys",
-  "quoteChart": "'"
+  "quoteChar": "'"
 }
