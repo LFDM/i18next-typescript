@@ -25,28 +25,28 @@ watch({ inFolder: FOLDER }, () =>
 const withOptions = (command: commander.Command) => {
   return command
     .option(
-      "-i, --in <inFolder>",
+      "-i, --in [inFolder]",
       "Path to a folder with your translation files"
     )
-    .option("-o, --out <outFile>", "Path to the output file")
+    .option("-o, --out [outFile]", "Path to the output file")
     .option(
-      "--default-namespace <defaultNamespace>",
+      "--default-namespace [defaultNamespace]",
       "Default Namespace in your i18next configuration",
       "translation"
     )
-    .option("--indent <indent>", "Indentation level of output file", "2")
+    .option("--indent [indent]", "Indentation level of output file", "2")
     .option(
-      "--type-name <typeName>",
+      "--type-name [typeName]",
       "Exported type name in the generated file",
       "TranslationKeys"
     )
     .option(
-      "--quote-char <quoteChar>",
+      "--quote-char [quoteChar]",
       "Character to use to quote strings",
       "'"
     )
     .option(
-      "-c, --config <configFile>",
+      "-c, --config [configFile]",
       "Path to config file",
       "i18next-typescript.config.json"
     );
