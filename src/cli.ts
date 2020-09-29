@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import * as commander from "commander";
 import { generate, Options } from "./generate";
 import { readFile } from "./util";
