@@ -51,4 +51,4 @@ Options:
 
 ### Bindings for specific languages
 
-- React: [ react-i8next-typescript ](https://github.com/LFDM/react-i18next-typescript)
+- React: [ react-i18next-typescript ](https://github.com/LFDM/react-i18next-typescript)
