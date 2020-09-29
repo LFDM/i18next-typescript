@@ -45,7 +45,7 @@ Options:
 
 While all options can be provided through the command line, it's recommended to use a configuration file like the one below in your root folder:
 
-```json
+`````json
 {
   "inFolder": "public/locales/en",
   "outFile": "app/src/i18next.keys.ts",
@@ -58,12 +58,14 @@ While all options can be provided through the command line, it's recommended to 
 
 Only `inFolder` and `outFile` are required. Minimal configuration:
 
-```
+````json
+
 {
-  "inFolder": "public/locales/en",
-  "outFile": "app/src/i18next.keys.ts",
+"inFolder": "public/locales/en",
+"outFile": "app/src/i18next.keys.ts",
 }
-```
+
+`````
 
 To leverage the auto-generated types, override and re-export the `TFunction` and/or `WithT`.
 
