@@ -1,7 +1,7 @@
 import * as commander from "commander";
-import * as fs from "fs/promises";
 import * as path from "path";
 import { generate, Options } from "./generate";
+import { readFile } from "./util";
 import { watch } from "./watch";
 
 const ROOT = path.join(__dirname, "..", "..", "..", "..");
@@ -36,12 +36,17 @@ const withOptions = (command: commander.Command) => {
     )
     .option("--indent <indent>", "Indentation level of output file", "2")
     .option(
-      "-t, --type-name, <typeName>",
-      "Exported type name in the generated file"
+      "--type-name <typeName>",
+      "Exported type name in the generated file",
+      "TranslationKeys"
     )
-    .option("--quote-char", "Character to use to quote strings", `'`)
     .option(
-      "-c, --config",
+      "--quote-char <quoteChar>",
+      "Character to use to quote strings",
+      "'"
+    )
+    .option(
+      "-c, --config <configFile>",
       "Path to config file",
       "i18next-typescript.config.json"
     );
@@ -49,7 +54,7 @@ const withOptions = (command: commander.Command) => {
 
 const parseOptions = async (opts: any): Promise<Options> => {
   const config: Partial<Options> = opts.config
-    ? await fs.readFile(opts.config).then((f) => JSON.parse(f.toString()))
+    ? await readFile(opts.config).then((f) => JSON.parse(f.toString()))
     : {};
   return {
     inFolder: opts.in,
