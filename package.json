@@ -20,7 +20,9 @@
   "scripts": {
     "build": "tsc",
     "dev": "ts-node src/cli.ts",
-    "prepack": "yarn build"
+    "prepack": "yarn build",
+    "example:watch": "yarn dev watch -c example/i18next-typescript.config.json",
+    "example:generate": "yarn dev generate -c example/i18next-typescript.config.json"
   },
   "bin": {
     "i18next-typescript": "lib/cli.js"
