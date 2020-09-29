@@ -21,7 +21,7 @@ const keysToTs = ({
   keys,
   indent,
   quoteChar,
-  typeName = "TranslationKey",
+  typeName,
 }: {
   keys: string[];
   indent: number;

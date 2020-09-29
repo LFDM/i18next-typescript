@@ -39,6 +39,7 @@ const parseOptions = async (opts: any): Promise<Options> => {
   const config: Partial<Options> = opts.config
     ? await readFile(opts.config).then((f) => JSON.parse(f.toString()))
     : {};
+
   return {
     inFolder: opts.in,
     outFile: opts.out,
@@ -57,6 +58,7 @@ withOptions(
     .description("Generate type definitions for all your translation keys.")
 ).action(async (c) => {
   const options = await parseOptions(c.opts());
+  console.log(options);
   await generate(options);
 });
 
