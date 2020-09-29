@@ -1,0 +1,14 @@
+{
+  "name": "i18next-typescript",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "author": "LFDM <1986gh@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "chokidar": "^3.4.2",
+    "typescript": "^4.0.3"
+  },
+  "peerDependencies": {
+    "i18next": "^19.7.0"
+  }
+}
