@@ -1,6 +1,6 @@
 {
   "name": "i18next-typescript",
-  "version": "0.0.1-rc6",
+  "version": "0.1.0",
   "main": "lib/index.js",
   "author": "LFDM <1986gh@gmail.com>",
   "license": "MIT",
