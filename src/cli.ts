@@ -50,12 +50,24 @@ const parseOptions = async (opts: any): Promise<Options> => {
   };
 };
 
-withOptions(commander.command("generate").alias("g")).action(async (c) => {
+withOptions(
+  commander
+    .command("generate")
+    .alias("g")
+    .description("Generate type definitions for all your translation keys.")
+).action(async (c) => {
   const options = await parseOptions(c.opts());
   await generate(options);
 });
 
-withOptions(commander.command("watch").alias("w")).action(async (c) => {
+withOptions(
+  commander
+    .command("watch")
+    .alias("w")
+    .description(
+      "Watch your translation files and generate type definitions for all your translations keys when they change."
+    )
+).action(async (c) => {
   const options = await parseOptions(c.opts());
   watch({ inFolder: options.inFolder }, () => generate(options));
 });
