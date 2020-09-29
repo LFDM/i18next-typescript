@@ -1,4 +1,5 @@
 import * as commander from "commander";
+import * as fs from "fs/promises";
 import * as path from "path";
 import { generate, Options } from "./generate";
 import { watch } from "./watch";
@@ -46,20 +47,28 @@ const withOptions = (command: commander.Command) => {
     );
 };
 
-const parseOptions = (opts: any): Options => {
+const parseOptions = async (opts: any): Promise<Options> => {
+  const config: Partial<Options> = opts.config
+    ? await fs.readFile(opts.config).then((f) => JSON.parse(f.toString()))
+    : {};
   return {
-    inFolder: "",
-    outFile: "",
+    inFolder: opts.in,
+    outFile: opts.out,
+    defaultNs: opts["default-namespace"],
+    indent: parseInt(opts.indent, 10),
+    typeName: opts["type-name"],
+    quoteChar: opts["quote-char"],
+    ...config,
   };
 };
 
 withOptions(commander.command("generate").alias("g")).action(async (c) => {
-  const options = parseOptions(c.opts());
+  const options = await parseOptions(c.opts());
   await generate(options);
 });
 
-withOptions(commander.command("watch").alias("w")).action((c) => {
-  const options = parseOptions(c.opts());
+withOptions(commander.command("watch").alias("w")).action(async (c) => {
+  const options = await parseOptions(c.opts());
   watch({ inFolder: options.inFolder }, () => generate(options));
 });
 
