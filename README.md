@@ -72,6 +72,8 @@ import { TFunction } from "./i18next-overrides.ts";
 const greeting = (t: TFunction) => t("common:greeting.evening");
 ```
 
+Run `i18next-typescript` watch to automatically update the auto-generated types whenever you make changes to your translation files.
+
 ### Run an example
 
 - Check out this repository
