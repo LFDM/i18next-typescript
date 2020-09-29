@@ -1,6 +1,6 @@
 {
   "inFolder": "example/locales/en",
-  "outFile": "example/i18next.keys.d.ts",
+  "outFile": "example/i18next.keys.ts",
   "defaultNs": "translation",
   "indent": 2,
   "typeName": "TranslationKeys",
