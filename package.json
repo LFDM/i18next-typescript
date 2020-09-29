@@ -5,10 +5,14 @@
   "author": "LFDM <1986gh@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^14.11.2",
     "chokidar": "^3.4.2",
     "typescript": "^4.0.3"
   },
   "peerDependencies": {
     "i18next": "^19.7.0"
+  },
+  "dependencies": {
+    "commander": "^6.1.0"
   }
 }
