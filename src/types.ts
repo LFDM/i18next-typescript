@@ -1,6 +1,6 @@
 import { StringMap, TFunctionResult, TOptions, WithT } from "i18next";
 
-export interface TFunctionWithTypes<Keys> {
+export interface TypedTFunction<Keys> {
   // basic usage
   <
     TKeys extends Keys,
@@ -22,6 +22,6 @@ export interface TFunctionWithTypes<Keys> {
   ): TResult;
 }
 
-export interface WithTWithTypes<Keys> extends WithT {
-  t: TFunctionWithTypes<Keys>;
+export interface TypedWithT<Keys> extends WithT {
+  t: TypedTFunction<Keys>;
 }
