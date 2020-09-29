@@ -7,6 +7,8 @@ Stronger type support for [i18-next](https://github.com/i18next/i18next)
 - Provides a CLI tool to extract all your translations keys, exporting them as a typescipt type definition. Includes support for nested keys and namespaces.
 - Provides type definitions to override types like `TFunction` to provide strong type support for translation keys.
 
+![What does it do?](./README.gif)
+
 ### How to use?
 
 ```
