@@ -1,10 +1,6 @@
-import * as fs from "fs";
+import * as fs from "fs/promises";
 import * as path from "path";
-import { promisify } from "util";
 
-const readDir = promisify(fs.readdir);
-const readFile = promisify(fs.readFile);
-const writeFile = promisify(fs.writeFile);
 const flatten = <T>(lists: T[][]): T[] =>
   lists.reduce((m, l) => m.concat(l), []);
 
@@ -59,7 +55,7 @@ export const generate = async ({
   typeName = "TranslationKey",
   quoteChar = `'`,
 }: Options) => {
-  const files = await readDir(inFolder);
+  const files = await fs.readdir(inFolder);
   const jsonFiles = files.filter((f) => f.endsWith(".json"));
   // make sure default keys appear first
   const i = jsonFiles.map((f) => path.parse(f).name).indexOf(defaultNs);
@@ -70,7 +66,7 @@ export const generate = async ({
   }
   const keys = await Promise.all(
     jsonFiles.map(async (f) => {
-      const content = await readFile(path.join(inFolder, f));
+      const content = await fs.readFile(path.join(inFolder, f));
       const translations = JSON.parse(content.toString());
       const namespace = path.parse(f).name;
       return extractKeys(
@@ -89,5 +85,5 @@ export const generate = async ({
     typeName,
   });
 
-  await writeFile(outFile, tsFileContent);
+  await fs.writeFile(outFile, tsFileContent);
 };
